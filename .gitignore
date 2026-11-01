@@ -1,0 +1,8 @@
+# Ignore Clang-Format extension settings.
+.clang-format
+
+# Ignore compiled source code.
+*.exe
+
+# Ignore VS Code configuration files.
+.vscode
