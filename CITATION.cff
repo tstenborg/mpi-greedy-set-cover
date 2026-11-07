@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+title: "Greedy Set Cover Field Selection for Multi-object Spectroscopy in C++ MPI"
+message: "If you use this repository, please cite it using these metadata."
+type: software
+authors:
+  - given-names: Travis
+    family-names: Stenborg
+    orcid: "https://orcid.org/0000-0002-2693-9628"
+url: "https://github.com/tstenborg/mpi-greedy-set-cover"
+abstract: >-
+   "This repository contains code and supporting material associated with the \
+   article 'Greedy Set Cover Field Selection for Multi-object Spectroscopy in \
+   C++ MPI'. The article explored the problem of efficiently observing large \
+   populations of astronomical targets that cannot be covered by a single \
+   telescope pointing. Using a greedy set-cover approach, the software \
+   repeatedly selects the field of view that captures the greatest number of \
+   previously unobserved targets, maximising the scientific return obtainable \
+   from a limited number of telescope pointings."
+keywords:
+  - astronomy
+  - "greedy-algorithms"
+  - mpi
+license: "BSD-3-Clause"
+preferred-citation:
+  authors:
+    - given-names: "Travis N."
+      family-names: Stenborg
+  collection-title: "Astronomical Data Analysis Software and Systems XXIV"
+  conference:
+    # "conference, name" appears in BibTeX format only, as "series".
+    name: "Astronomical Society of the Pacific Conference Series, volume 495"
+  editors:
+    # "editors" appear in BibTeX format only, as "editor".
+    - given-names: "Andrew Russ"
+      family-names: Taylor
+    - given-names: Erik
+      family-names: Rosolowsky
+  end: 272  # Last page number.
+  # "notes" values should be formatted as single lines.
+  notes: "Proceedings of Astronomical Data Analysis Software and Systems (ADASS) XXIV, a conference held in Calgary, Canada, 05 to 09 Oct, 2014."
+  publisher:
+    # "publisher, name" appears in BibTeX format only, as "publisher".
+    name: "Astronomical Society of the Pacific"
+  start: 269  # First page number.
+  title: "Greedy Set Cover Field Selection for Multi-object Spectroscopy in C++ MPI"
+  type: "conference-paper"
+  volume: 495  # Appears in APA format only.
+  year: 2015

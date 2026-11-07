@@ -1,0 +1,41 @@
+Bootstrap: docker
+From: ubuntu:26.04
+
+%environment
+    # Allow Open MPI (older versions) to run under the root account.
+    export OMPI_ALLOW_RUN_AS_ROOT=1
+	# Allow Open MPI (newer versions) to run under the root account.
+    export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
+
+%files
+    # Copy the C++ program to the "/opt/app" directory.
+    src/mpi-greedy-set-cover.cpp /opt/app/
+
+    # Copy the JSON data file.
+    data/coordinates.json /opt/app/data/coordinates.json
+
+%post
+    # Install packages using their default configurations, noninteractively.
+	# I.e. Without stopping to ask questions.
+    # N.B. Ubuntu was built on Debian.
+    export DEBIAN_FRONTEND=noninteractive
+
+    # Get the latest list of Ubuntu packages and their versions.
+    apt-get update
+
+    # Install specified packages. Automatically answer yes "y" to all prompts.
+	#   build-essential: Baseline tools for building software on Linux.
+	#   g++: GNU C++ compiler.
+	#   nlohmann-json3-dev: JSON for C++.
+	#   openmpi-bin: Open MPI execution tools, like mpiexec.
+	#   libopenmpi-dev: Open MPI development headers and libraries, like mpicxx.
+    apt-get install -y \
+        build-essential \
+        g++ \
+		nlohmann-json3-dev \
+        openmpi-bin \
+        libopenmpi-dev
+
+    # Compile the program.
+    cd /opt/app
+    mpicxx mpi-greedy-set-cover.cpp -o mpi-greedy-set-cover.exe -O3
