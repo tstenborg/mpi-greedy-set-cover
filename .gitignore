@@ -1,0 +1,11 @@
+# Ignore Clang-Format extension settings.
+.clang-format
+
+# Ignore compiled source code.
+*.exe
+
+# Ignore Apptainer and SingularityCE containers.
+.sif
+
+# Ignore VS Code configuration files.
+.vscode
